@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class = "jumbotron text-center">
+    <h3>Halil Horuz Bloğuna Hoşgeldiniz.</h3>
+    <p>Bu blogta yazılım bilgi ve birikimlerinizi insanlarla paylaşarak yardımcı olabilirsiniz.</p>
+</div>
+
+<p>
+    {% if request.user.is_authenticated %}
+        Giriş Yapılmış, {{request.user.username}}
+    {% else %}
+        Giriş Yapılmamış
+    {% endif %}
+</p>
+
+{% endblock body %}
